@@ -2,6 +2,7 @@
 import ListItem from '@/components/ListItem'
 import Modal from '@/components/Modal'
 import Portal from '@/components/Portal'
+import { isProd } from '@/constants/isPro'
 import { useSwapContext } from '@/context/swapContext'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -35,14 +36,16 @@ const CoinListModal = ({ coinList, coinName, source }: Props) => {
       >
         <div className='flex gap-2 justify-between items-center'>
           <Image
-            src={`/tokens/${selectedCoinName}.svg`}
+            src={`${
+              isProd ? '/currency-convert' : ''
+            }/tokens/${selectedCoinName}.svg`}
             alt={selectedCoinName}
             width={24}
             height={24}
           />
           <p className='w-[78px] font-bold'>{selectedCoinName}</p>
           <Image
-            src='/icons/arrow-down.svg'
+            src={`${isProd ? '/currency-convert' : ''}/icons/arrow-down.svg`}
             alt='arrow-down'
             className={clsx('cursor-pointer')}
             width={25}

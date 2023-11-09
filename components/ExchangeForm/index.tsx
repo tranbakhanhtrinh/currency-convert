@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Tooltip from '../Tooltip'
 import { useFetchCurrency } from '@/hooks'
+import { isProd } from '@/constants/isPro'
 
 type CoinType = {
   currency: string
@@ -134,7 +135,7 @@ const ExchangeForm = () => {
         className='p-2 rounded-full bg-exchange-input my-12'
       >
         <Image
-          src='/icons/up-down-arrow.svg'
+          src={`${isProd ? '/currency-convert' : ''}/icons/up-down-arrow.svg`}
           alt='up-down-arrow'
           width={30}
           height={30}

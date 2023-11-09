@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Input from '@/components/Input'
 import { useEffect, useState } from 'react'
+import { isProd } from '@/constants/isPro'
 
 type Props = {
   coinList: string[]
@@ -29,7 +30,7 @@ const ListItem = ({ coinList, setCoinName }: Props) => {
       onClick={() => handleSetCoinName(coin)}
     >
       <Image
-        src={`/tokens/${coin}.svg`}
+        src={`${isProd ? '/currency-convert' : ''}/tokens/${coin}.svg`}
         alt={coin}
         width={24}
         height={24}

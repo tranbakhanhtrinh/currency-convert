@@ -1,4 +1,5 @@
 import Button from '@/components/Button'
+import { isProd } from '@/constants/isPro'
 import clsx from 'clsx'
 import Image from 'next/image'
 import React from 'react'
@@ -28,7 +29,7 @@ const Modal = ({ children, modalTitle, showModal, setCloseModal }: Props) => {
             onClick={() => setCloseModal(false)}
           >
             <Image
-              src='/icons/close.svg'
+              src={`${isProd ? '/currency-convert' : ''}/icons/close.svg`}
               alt='Close button'
               width={20}
               height={20}
