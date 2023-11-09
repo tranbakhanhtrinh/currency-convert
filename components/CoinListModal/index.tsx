@@ -27,8 +27,6 @@ const CoinListModal = ({ coinList, coinName, source }: Props) => {
   useEffect(() => {
     setSelectedCoinName(coinName)
   }, [coinName])
-  console.log({ fromCoin, toCoin })
-  console.log(removeCurrentCoinName)
   return (
     <>
       <div
